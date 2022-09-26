@@ -1,0 +1,20 @@
+.container {
+  background-color: var(--tg-theme-button-color);
+  color: var(--tg-theme-button-text-color);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  cursor: pointer;
+  font-size: 12pt;
+}
+
+.active-container {
+  background-color: rgb(111, 0, 255);
+}
+
+.correct-container {
+  background-color: rgb(32, 179, 76);
+}
+.wrong-container {
+  background-color: rgb(221, 63, 52);
+}
