@@ -15,10 +15,28 @@ function App() {
 
   tg.onEvent("mainButtonClicked", function () {
     setIsShowingAnswer(true);
-    setTimeout(function () {
-      tg.close();
-    }, 2000);
+    // setTimeout(function () {
+    //   tg.close();
+    // }, 2000);
   });
+
+  const shuffle = (array) => {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+  }
 
   const altfunc = () => {
     setIsShowingAnswer(true);
@@ -83,7 +101,7 @@ function App() {
 
         const trivia = {
           question: data[0].question,
-          answers: answers,
+          answers: shuffle(answers),
         };
         setQuestion(trivia.question);
         setRenderAnswers(trivia.answers);
